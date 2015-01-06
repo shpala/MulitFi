@@ -11,6 +11,8 @@ IFF_TAP         = 0x0002
 IFF_UP          = 0x1
 
 class Sniffer(object):
+
+    
     def __init__(self, ifname):
         self.sock = conf.L2listen(filter='link[0x12]&0xff == 8 and (link[0x13]&0x42 == 2 or link[0x13]&0x41 == 1)', iface=ifname)
         self.if_count = 0
